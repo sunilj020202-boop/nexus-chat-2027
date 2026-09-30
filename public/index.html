@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS Chat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="joinScreen" class="overlay">
+  <div class="join-card">
+    <div class="logo">NEXUS<span>CHAT</span></div>
+    <h1>Join the room.</h1>
+    <p>Chat with everyone using the same room ID.</p>
+    <input id="username" maxlength="24" placeholder="Your username">
+    <div class="room-row">
+      <input id="roomId" maxlength="24" placeholder="Room ID">
+      <button id="randomBtn">RANDOM</button>
+    </div>
+    <button id="joinBtn" class="join-btn">ENTER CHAT</button>
+  </div>
+</div>
+
+<header>
+  <div class="brand">NEXUS<span>CHAT</span></div>
+  <div class="room">ROOM <b id="roomLabel">----</b></div>
+  <button id="copyBtn">COPY INVITE</button>
+</header>
+
+<main>
+  <section class="chat-panel">
+    <div class="chat-title">
+      <div>
+        <strong>LIVE CHAT</strong>
+        <small><i></i><span id="onlineCount">0</span> online</small>
+      </div>
+      <div id="avatars"></div>
+    </div>
+
+    <div id="messages" class="messages"></div>
+    <div id="typing" class="typing"></div>
+
+    <form id="chatForm">
+      <input id="messageInput" maxlength="500" autocomplete="off" placeholder="Type a message...">
+      <button type="submit">➤</button>
+    </form>
+  </section>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
